@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import onEaseOutExpo from '../utils/onEaseOutExpo'
+
 const useCountUp = (start: number, end: number, duration: number) => {
   const [count, setCount] = useState(start)
   const stepTime = 1000 / 30
@@ -10,7 +12,7 @@ const useCountUp = (start: number, end: number, duration: number) => {
 
     const countInterval = setInterval(() => {
       currentNumber += 1
-      const progress = currentNumber / totalStepTime
+      const progress = onEaseOutExpo(currentNumber / totalStepTime, 1)
       setCount(Math.round(end * progress))
 
       if (progress === 1) {
