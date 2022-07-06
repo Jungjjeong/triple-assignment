@@ -10,10 +10,10 @@ const ItemContainer = styled.div`
   background-repeat: no-repeat;
   background-image: url(${(props: Props) => props.image});
   color: rgba(58, 58, 58, 0.8);
-  font-weight: bold;
   height: 54px;
   padding: 5px 0px 5px 62px;
   font-size: 14px;
+  font-weight: bold;
   line-height: 22px;
   margin-right: 39px;
 `

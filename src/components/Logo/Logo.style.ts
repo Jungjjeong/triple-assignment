@@ -9,7 +9,6 @@ const LogoSection = styled.div`
   width: 400px;
   height: 338px;
   background-image: url(${triple});
-  border: 1px solid tomato;
   background-repeat: no-repeat;
   background-size: 400px 338px;
   padding-top: 280px;
