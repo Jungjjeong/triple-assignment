@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import onEaseOutExpo from '../utils/onEaseOutExpo'
@@ -10,6 +9,10 @@ const useCountUp = (start: number, end: number, duration: number) => {
 
   const stepTime = useCallback(
     (time: number) => {
+      if (!currentTimeRef.current) {
+        currentTimeRef.current = time
+      }
+
       const progress = time - currentTimeRef.current
       const nextCount = Math.floor(
         (end - start) * onEaseOutExpo(progress / duration, 1),
