@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import triple from '../../assets/triple2x.png'
+import { tripleLogo } from '../../assets'
 
 const LogoSection = styled.div`
   box-sizing: border-box;
@@ -8,7 +8,7 @@ const LogoSection = styled.div`
   top: 150px;
   width: 400px;
   height: 338px;
-  background-image: url(${triple});
+  background-image: url(${tripleLogo});
   background-repeat: no-repeat;
   background-size: 400px 338px;
   padding-top: 280px;

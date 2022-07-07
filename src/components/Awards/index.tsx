@@ -1,5 +1,4 @@
-import appleBadge from '../../assets/badge-apple4x.png'
-import playStoreBadge from '../../assets/play-store2x.png'
+import { appleBadge, playStoreBadge } from '../../assets'
 import useFadeIn from '../../hooks/useFadeIn'
 
 import AwardsContainer from './Awards.style'

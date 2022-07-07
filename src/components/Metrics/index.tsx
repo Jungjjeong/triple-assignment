@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import useCountUp from '../../hooks/useCountUp'
-import useFadeIn from '../../hooks/useFadeIn'
+import { useCountUp, useFadeIn } from '../../hooks'
 
 import MetricItem from './MetricItem'
 import MetricsContainer from './Metrics.style'
