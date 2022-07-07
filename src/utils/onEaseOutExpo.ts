@@ -1,5 +1,5 @@
 const onEaseOutExpo = (t: number, d: number) => {
-  return t === d ? 1 : -Math.pow(2, (-10 * t) / d) + 1 + 0
+  return t > d ? 1 : -Math.pow(2, (-10 * t) / d) + 1 + 0
 }
 
 // T: 경과한 시간
