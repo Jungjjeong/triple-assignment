@@ -5,17 +5,18 @@ interface Props {
 }
 
 const ItemContainer = styled.div`
-  background-size: 54px 54px;
-  background-position: left top;
-  background-repeat: no-repeat;
-  background-image: url(${(props: Props) => props.image});
-  color: rgba(58, 58, 58, 0.8);
   height: 54px;
-  padding: 5px 0px 5px 62px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 22px;
   margin-right: 39px;
+  padding: 5px 0px 5px 62px;
+  color: rgba(58, 58, 58, 0.8);
+  font-weight: bold;
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 22px;
+  background-image: url(${(props: Props) => props.image});
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 54px 54px;
 `
 
 export default ItemContainer
