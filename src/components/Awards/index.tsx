@@ -1,12 +1,15 @@
 import appleBadge from '../../assets/badge-apple4x.png'
 import playStoreBadge from '../../assets/play-store2x.png'
+import useFadeIn from '../../hooks/useFadeIn'
 
 import AwardsContainer from './Awards.style'
 import AwardItem from './AwardItem'
 
 const Awards = () => {
+  const { ref, style } = useFadeIn(0.7, 0.2)
+
   return (
-    <AwardsContainer>
+    <AwardsContainer ref={ref} style={style}>
       <AwardItem
         organizationText="2018 구글 플레이스토어"
         awardText="올해의 앱 최우수상 수상"

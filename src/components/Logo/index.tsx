@@ -1,3 +1,5 @@
+import useFadeIn from '../../hooks/useFadeIn'
+
 import LogoSection from './Logo.style'
 
 interface Props {
@@ -9,7 +11,13 @@ const defaultProps = {
 }
 
 const Logo = ({ text }: Props) => {
-  return <LogoSection>{text}</LogoSection>
+  const { ref, style } = useFadeIn(0.7, 0)
+
+  return (
+    <LogoSection ref={ref} style={style}>
+      {text}
+    </LogoSection>
+  )
 }
 
 Logo.defaultProps = defaultProps

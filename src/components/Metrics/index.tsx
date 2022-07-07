@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 
 import useCountUp from '../../hooks/useCountUp'
+import useFadeIn from '../../hooks/useFadeIn'
 
 import MetricItem from './MetricItem'
 import MetricsContainer from './Metrics.style'
 
 const Metrics = () => {
+  const { ref, style } = useFadeIn(0.7, 0.1)
   const [user, setUser] = useState(0)
   const [review, setReview] = useState(0)
   const [calendar, setCalendar] = useState(0)
@@ -27,7 +29,7 @@ const Metrics = () => {
   }, [calendarCount])
 
   return (
-    <MetricsContainer>
+    <MetricsContainer ref={ref} style={style}>
       <MetricItem countText={user} unitText="만 명" planeText="의 여행자" />
       <MetricItem
         countText={review}
