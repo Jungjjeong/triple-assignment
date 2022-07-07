@@ -5,6 +5,8 @@ export default {
   component: Logo,
   argTypes: {
     text: { control: 'text' },
+    fadeInDuration: { control: 'number' },
+    fadeInDelay: { control: 'number' },
   },
 }
 

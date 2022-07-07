@@ -8,7 +8,7 @@ const TripleSection = () => {
   return (
     <S.section className="section__SectionContainer">
       <S.sectionContainer className="section__TripleSection">
-        <Logo text="2021년 12월 기준" />
+        <Logo />
         <Metrics />
         <Awards />
       </S.sectionContainer>

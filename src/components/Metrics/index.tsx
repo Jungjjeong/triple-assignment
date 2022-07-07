@@ -5,8 +5,18 @@ import { useCountUp, useFadeIn } from '../../hooks'
 import MetricItem from './MetricItem'
 import MetricsContainer from './Metrics.style'
 
-const Metrics = () => {
-  const { ref, style } = useFadeIn(0.7, 0.1)
+interface Props {
+  fadeInDuration: number
+  fadeInDelay: number
+}
+
+const defaultProps = {
+  fadeInDuration: 0.7,
+  fadeInDelay: 0.1,
+}
+
+const Metrics = ({ fadeInDuration, fadeInDelay }: Props) => {
+  const { ref, style } = useFadeIn(fadeInDuration, fadeInDelay)
   const [user, setUser] = useState(0)
   const [review, setReview] = useState(0)
   const [calendar, setCalendar] = useState(0)
@@ -47,5 +57,7 @@ const Metrics = () => {
     </MetricsContainer>
   )
 }
+
+Metrics.defaultProps = defaultProps
 
 export default Metrics
