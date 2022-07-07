@@ -14,7 +14,7 @@ const defaultProps = {
 
 const AwardItem = ({ organizationText, awardText, awardImage }: Props) => {
   return (
-    <ItemContainer image={awardImage}>
+    <ItemContainer image={awardImage} className="statistic-section__AwardItem">
       {organizationText}
       <br />
       {awardText}

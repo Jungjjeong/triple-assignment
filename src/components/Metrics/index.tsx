@@ -29,7 +29,11 @@ const Metrics = () => {
   }, [calendarCount])
 
   return (
-    <MetricsContainer ref={ref} style={style}>
+    <MetricsContainer
+      ref={ref}
+      style={style}
+      className="statistic-section__MetricsContainer"
+    >
       <MetricItem countText={user} unitText="만 명" planeText="의 여행자" />
       <MetricItem
         countText={review}

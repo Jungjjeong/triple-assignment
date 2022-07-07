@@ -14,7 +14,11 @@ const Logo = ({ text }: Props) => {
   const { ref, style } = useFadeIn(0.7, 0)
 
   return (
-    <LogoSection ref={ref} style={style}>
+    <LogoSection
+      ref={ref}
+      style={style}
+      className="statistic-section__ContentLogo"
+    >
       {text}
     </LogoSection>
   )

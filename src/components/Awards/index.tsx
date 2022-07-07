@@ -9,7 +9,11 @@ const Awards = () => {
   const { ref, style } = useFadeIn(0.7, 0.2)
 
   return (
-    <AwardsContainer ref={ref} style={style}>
+    <AwardsContainer
+      ref={ref}
+      style={style}
+      className="statistic-section__AwardsContainer"
+    >
       <AwardItem
         organizationText="2018 구글 플레이스토어"
         awardText="올해의 앱 최우수상 수상"

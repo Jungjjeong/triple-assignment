@@ -6,8 +6,8 @@ import S from './TripleSection.style'
 
 const TripleSection = () => {
   return (
-    <S.section>
-      <S.sectionContainer>
+    <S.section className="section__SectionContainer">
+      <S.sectionContainer className="section__TripleSection">
         <Logo text="2021년 12월 기준" />
         <Metrics />
         <Awards />

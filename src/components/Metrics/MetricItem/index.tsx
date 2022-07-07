@@ -8,7 +8,7 @@ interface Props {
 
 const MetricItem = ({ countText, unitText, planeText }: Props) => {
   return (
-    <ItemContainer>
+    <ItemContainer className="statistic-section__MetricItem">
       <strong>
         <span>{countText}</span>
         {unitText}
