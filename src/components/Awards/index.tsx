@@ -4,18 +4,24 @@ import useFadeIn from '../../hooks/useFadeIn'
 import AwardsContainer from './Awards.style'
 import AwardItem from './AwardItem'
 
+interface FadeInProps {
+  duration: number
+  delay: number
+}
+
 interface Props {
-  fadeInDuration: number
-  fadeInDelay: number
+  fadeInAnimation: FadeInProps
 }
 
 const defaultProps = {
-  fadeInDuration: 0.7,
-  fadeInDelay: 0.2,
+  fadeInAnimation: { duration: 0.7, delay: 0.2 },
 }
 
-const Awards = ({ fadeInDuration, fadeInDelay }: Props) => {
-  const { ref, style } = useFadeIn(fadeInDuration, fadeInDelay)
+const Awards = ({ fadeInAnimation }: Props) => {
+  const { ref, style } = useFadeIn(
+    fadeInAnimation.duration,
+    fadeInAnimation.delay,
+  )
 
   return (
     <AwardsContainer

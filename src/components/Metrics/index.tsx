@@ -1,41 +1,26 @@
-import { useEffect, useState } from 'react'
-
-import { useCountUp, useFadeIn } from '../../hooks'
+import { useFadeIn } from '../../hooks'
 
 import MetricItem from './MetricItem'
 import MetricsContainer from './Metrics.style'
 
+interface FadeInProps {
+  duration: number
+  delay: number
+}
+
 interface Props {
-  fadeInDuration: number
-  fadeInDelay: number
+  fadeInAnimation: FadeInProps
 }
 
 const defaultProps = {
-  fadeInDuration: 0.7,
-  fadeInDelay: 0.1,
+  fadeInAnimation: { duration: 0.7, delay: 0.1 },
 }
 
-const Metrics = ({ fadeInDuration, fadeInDelay }: Props) => {
-  const { ref, style } = useFadeIn(fadeInDuration, fadeInDelay)
-  const [user, setUser] = useState(0)
-  const [review, setReview] = useState(0)
-  const [calendar, setCalendar] = useState(0)
-
-  const userCount = useCountUp(0, 700, 2000)
-  const reviewCount = useCountUp(0, 100, 2000)
-  const calendarCount = useCountUp(0, 470, 2000)
-
-  useEffect(() => {
-    setUser(userCount)
-  }, [userCount])
-
-  useEffect(() => {
-    setReview(reviewCount)
-  }, [reviewCount])
-
-  useEffect(() => {
-    setCalendar(calendarCount)
-  }, [calendarCount])
+const Metrics = ({ fadeInAnimation }: Props) => {
+  const { ref, style } = useFadeIn(
+    fadeInAnimation.duration,
+    fadeInAnimation.delay,
+  )
 
   return (
     <MetricsContainer
@@ -43,14 +28,18 @@ const Metrics = ({ fadeInDuration, fadeInDelay }: Props) => {
       style={style}
       className="statistic-section__MetricsContainer"
     >
-      <MetricItem countText={user} unitText="만 명" planeText="의 여행자" />
       <MetricItem
-        countText={review}
+        countUpAnimation={{ startAt: 0, endAt: 700, duration: 2000 }}
+        unitText="만 명"
+        planeText="의 여행자"
+      />
+      <MetricItem
+        countUpAnimation={{ startAt: 0, endAt: 100, duration: 2000 }}
         unitText="만 개"
         planeText="의 여행 리뷰"
       />
       <MetricItem
-        countText={calendar}
+        countUpAnimation={{ startAt: 0, endAt: 470, duration: 2000 }}
         unitText="만 개"
         planeText="의 여행 일정"
       />

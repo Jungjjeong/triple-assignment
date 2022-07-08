@@ -2,20 +2,26 @@ import useFadeIn from '../../hooks/useFadeIn'
 
 import LogoSection from './Logo.style'
 
+interface FadeInProps {
+  duration: number
+  delay: number
+}
+
 interface Props {
   text: string
-  fadeInDuration: number
-  fadeInDelay: number
+  fadeInAnimation: FadeInProps
 }
 
 const defaultProps = {
   text: '2021년 12월 기준',
-  fadeInDuration: 0.7,
-  fadeInDelay: 0,
+  fadeInAnimation: { duration: 0.7, delay: 0 },
 }
 
-const Logo = ({ text, fadeInDuration, fadeInDelay }: Props) => {
-  const { ref, style } = useFadeIn(fadeInDuration, fadeInDelay)
+const Logo = ({ text, fadeInAnimation }: Props) => {
+  const { ref, style } = useFadeIn(
+    fadeInAnimation.duration,
+    fadeInAnimation.delay,
+  )
 
   return (
     <LogoSection
