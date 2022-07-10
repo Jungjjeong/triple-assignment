@@ -1,4 +1,15 @@
+<p align="center"><img src="https://user-images.githubusercontent.com/72294509/178151755-6993d441-6c52-48f0-a09d-ee67a0f2e1ec.gif" align="center" width="200px"></p>
+<p align="center"><strong>트리플 홈페이지 Section 구현</strong></p>
+
+<br/>
+
 # 1️⃣ 프로젝트 실행 방법
+
+- 배포 링크
+
+[▶ 과제 배포 링크](https://triple-assignment-htc8fpaga-jungjjeong.vercel.app/)
+
+<br/>
 
 - 프로젝트 실행
 
@@ -241,6 +252,8 @@ const Metrics = ({ fadeInAnimation }: Props) => {
   ...
 ```
 
+Fade in 스타일의 경우 트리플 홈페이지와 동일하게 `opacity: 0, transform: translateY(10px)` -> `opacity: 1, transform: translateY(0)`을 적용했습니다.
+
 <br/>
 
 ### 컴포넌트 단위, props
@@ -270,7 +283,9 @@ optional이 아닌 필수로 받아야 하는 props의 경우, defaultProps를 �
 
 <br/><br/>
 
-## ◼ Commit Convention
+## ◼ Convention
+
+### Commit Convention
 
 - [유다시티의 커밋 메세지 스타일 가이드](https://udacity.github.io/git-styleguide/)
 - Commit Type만 영어로 작성합니다.
@@ -284,3 +299,13 @@ Refactor: 코드 리팩토링
 Test: 테스트 코드, 리팩토링 테스트 코드 추가
 Chore: 빌드 업무 수정
 ```
+
+<br/>
+
+### Style Order
+
+1. 레이아웃 (display, visibility, overflow, float, clear, position, top, right, bottom, left, z-index)
+2. Box (Width, height, margin, padding, border)
+3. 폰트 (font. color, letter-spacing, text-align, text-decoration, text-indent, vertical-align, white-space)
+4. 배경 (background)
+5. 기타
