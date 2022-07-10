@@ -14,7 +14,7 @@ interface Props {
 }
 
 const defaultProps = {
-  fadeInAnimation: { duration: 0.7, delay: 0.2 },
+  fadeInAnimation: { duration: 700, delay: 200 },
 }
 
 const Awards = ({ fadeInAnimation }: Props) => {

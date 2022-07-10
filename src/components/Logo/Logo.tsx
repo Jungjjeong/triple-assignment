@@ -14,7 +14,7 @@ interface Props {
 
 const defaultProps = {
   text: '2021년 12월 기준',
-  fadeInAnimation: { duration: 0.7, delay: 0 },
+  fadeInAnimation: { duration: 700, delay: 0 },
 }
 
 const Logo = ({ text, fadeInAnimation }: Props) => {

@@ -13,7 +13,7 @@ interface Props {
 }
 
 const defaultProps = {
-  fadeInAnimation: { duration: 0.7, delay: 0.1 },
+  fadeInAnimation: { duration: 700, delay: 100 },
 }
 
 const Metrics = ({ fadeInAnimation }: Props) => {

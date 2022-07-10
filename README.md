@@ -200,18 +200,18 @@ export { default as TripleSection } from './TripleSection'
 이는 `setInterval`은 정확한 실행 시간을 보장하지 못하며, 프레임 소실 문제가 있기 떄문임을 알았습니다.
 
 따라서 `requestAnimationFrame`을 사용한 방식으로 재구현했습니다. <br/>
-숫자 증가가 점점 느려지는 효과는 `onEaseOutExpo` 함수를 따로 구현해 적용했습니다.
+숫자 증가가 점점 느려지는 효과는 `getEaseOutExpo` 함수를 따로 구현해 적용했습니다.
 
 ```ts
-// onEaseOutExpo util 함수
-const onEaseOutExpo = (t: number, d: number) => {
-  return t > d ? 1 : -Math.pow(2, (-10 * t) / d) + 1 + 0
+const getEaseOutExpo = (t: number, d: number) => {
+  return t > d ? 1 : -Math.pow(2, (-10 * t) / d) + 1
 }
 
-export default onEaseOutExpo
+export default getEaseOutExpo
 ```
 
 MetricItem 컴포넌트의 `countUpAnimation` props를 받아 `useCountUp hook`을 사용합니다.
+단위는 `ms`입니다.
 
 ```ts
 // MetricItem Component 일부
@@ -241,6 +241,7 @@ const MetricItem = ({ countUpAnimation, unitText, planeText }: Props) => {
 
 inline style을 적용시키는 `useFadeIn hook`을 구현하여 각 컴포넌트에 fadeIn 효과를 적용했습니다.<br/>
 각 컴포넌트에 `fadeInAnimation` props를 받아 `useFadeIn hook`을 사용할 수 있습니다.
+단위는 `ms`입니다.
 
 ```ts
 // Metrics Component 일부

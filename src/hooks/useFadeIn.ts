@@ -10,7 +10,7 @@ const useFadeIn = (duration: number, delay: number) => {
 
     const { current } = currentDom
 
-    current.style.transition = `all ${duration}s ease-out ${delay}s`
+    current.style.transition = `all ${duration}ms ease-out ${delay}ms`
     current.style.opacity = '1'
     current.style.transform = 'translateY(0)'
   }, [delay, duration])

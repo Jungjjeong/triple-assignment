@@ -16,6 +16,12 @@ interface Props {
   planeText: string
 }
 
+const defaultProp = {
+  countUpAnimation: { startAt: 0, endAt: 700, duration: 2000 },
+  unitText: '',
+  planeText: '',
+}
+
 const MetricItem = ({ countUpAnimation, unitText, planeText }: Props) => {
   const [count, setCount] = useState(0)
   const metricCount = useCountUp(
@@ -38,5 +44,7 @@ const MetricItem = ({ countUpAnimation, unitText, planeText }: Props) => {
     </ItemContainer>
   )
 }
+
+MetricItem.defaultProp = defaultProp
 
 export default MetricItem

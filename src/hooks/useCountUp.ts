@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import onEaseOutExpo from '../utils/onEaseOutExpo'
+import getEaseOutExpo from '../utils/getEaseOutExpo'
 
 const useCountUp = (start: number, end: number, duration: number) => {
   const [count, setCount] = useState(start)
@@ -15,7 +15,7 @@ const useCountUp = (start: number, end: number, duration: number) => {
 
       const progress = time - currentTimeRef.current
       const nextCount = Math.floor(
-        (end - start) * onEaseOutExpo(progress / duration, 1),
+        (end - start) * getEaseOutExpo(progress / duration, 1),
       )
 
       setCount(nextCount)
